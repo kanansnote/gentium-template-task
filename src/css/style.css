@@ -130,7 +130,6 @@ main {
             padding: 6vh;
 
             h1 {
-                padding-top: ;
                 width: 120vh;
                 font-size: 80px;
             }
@@ -199,7 +198,7 @@ main {
     #mainBackground {
         position: absolute;
         width: 100%;
-        height: 72.9%;
+        height: 90%;
         background-color: #101010;
     }
 
@@ -268,15 +267,6 @@ main {
             }
         }
 
-        #client {
-            .clientHeader {
-                
-                img {
-                    height: 10vh;
-                }
-            }
-
-        }
     }
 
     #works {
@@ -378,32 +368,97 @@ main {
                         object-fit: cover;
                         width: 100%;
                         height: 100%;
-                        }
                     }
                 }
             }
+        }
 
-            #aboutMainLast {
-                grid-area: aboutMainLast;
+        #aboutMainLast {
+            grid-area: aboutMainLast;
 
+            display: flex;
+            justify-content: space-around;
+            gap: 15vh;
+
+            .aboutJustText {
                 display: flex;
-                justify-content: space-around;
-                gap: 15vh;
+                flex-direction: column;
+                gap: 5vh;
 
-                .aboutJustText {
-                    display: flex;
-                    flex-direction: column;
-                    gap: 5vh;
-                    
-                    p {
-                        width: 50vh;
-                    }
+                p {
+                    width: 50vh;
                 }
-
             }
+
         }
     }
 
+    #client {
+        margin-top: 30vh;
+        display: flex;
+        justify-content: space-around;
+
+        &::before {
+            content: "";
+            margin-left: 27.7em;
+        }
+
+        &::after {
+            content: "";
+            margin-bottom: 10vh;
+        }
+
+        img {
+            width: 70%;
+            height: 85vh;
+            object-fit: cover;
+            margin-left: 7vh;
+        }
+
+        #clientBody {
+            display: flex;
+            flex-direction: column;
+
+
+            .clientHeader {
+                display: flex;
+                flex-direction: column;
+                margin-top: 0;
+            }
+
+            #clientMain {
+                display: flex;
+                flex-direction: column;
+                gap: 8vh;
+                margin-left: 5vh;
+                width: 90%;
+
+                p {
+                    font-size: 20px;
+                }
+            }
+
+        }
+        
+    }
+
+    #lineWrapper {
+        margin-top: 15vh;
+        border-bottom: solid 1px rgba(255,255,255,0.08);
+    }
+
+    #ourClients {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 15vh;
+
+        img {
+            object-fit: contain;
+            width: 10%;
+            height: 20vh;
+        }
+    }
 }
 
 footer {
