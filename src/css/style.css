@@ -34,7 +34,7 @@ header {
                     border-bottom: solid 2px #e9204f;
                     transition: 0.4s ease-in-out;
                 }
-              
+
                 &:hover::after {
                     width: 30%;
                 }
@@ -48,7 +48,25 @@ header {
 }
 
 main {
-    
+
+    section::before {
+        content: "";
+        position: absolute;
+        left: 2.5%;
+        border-bottom: solid 2px #e9204f;
+        width: 70px;
+    }
+
+    section::after {
+        content: "";
+        position: absolute;
+        bottom: 100%;
+        left: 50%;
+        border-right: solid 2px #e9204f;
+        width: 2px;
+        height: 60px;
+    }
+
     a {
         text-decoration: none;
         text-align: center;
@@ -58,8 +76,9 @@ main {
         font-size: 16px;
         font-weight: 600;
         position: relative;
-        overflow: hidden; /* Added to hide overflowing content */
-      
+        overflow: hidden;
+        /* Added to hide overflowing content */
+
         &::after {
             content: "";
             position: absolute;
@@ -71,7 +90,7 @@ main {
             transition: 0.5s ease-in-out;
             z-index: -1;
         }
-      
+
         &:hover::after {
             width: 100%;
         }
@@ -96,39 +115,49 @@ main {
         position: absolute;
         top: 13.8vh;
 
+        &::before {
+            left: 3.5%;
+        }
+
+        &::after {
+            display: none;
+        }
+
         #homeBanner {
             display: flex;
             flex-direction: column;
-            gap: 10vh;
-            padding: 10vh;
+            gap: 30vh;
+            padding: 6vh;
 
             h1 {
+                padding-top: ;
                 width: 120vh;
                 font-size: 80px;
             }
-            
-            &::before {
-                content: "";
-                border-bottom: solid 2px #e9204f;
-                width: 70px;
+
+            a {
+                margin-top: -20vh;
             }
         }
 
         #homeCards {
             display: flex;
             justify-content: space-evenly;
+            margin-top: 15vh;
 
             .homeCard {
                 width: 30%;
-                height: 45.4vh;
+                height: 50vh;
                 padding: 10vh 5vh;
                 background-color: #1b1b1b;
 
-                &:nth-child(1), &:nth-child(2):hover, &:nth-child(3):hover {
+                &:nth-child(1),
+                &:nth-child(2):hover,
+                &:nth-child(3):hover {
                     background-color: #e9204f;
                     transition: 0.5s ease-in-out;
                 }
-                
+
                 img {
                     bottom: 5vh;
                     left: -3px;
@@ -137,7 +166,7 @@ main {
                 h3 {
                     font-weight: bold;
                     font-size: 25px;
-                
+
                     &::after {
                         content: "";
                         display: block;
@@ -152,14 +181,15 @@ main {
     }
 
     .sectionHeader {
-        margin: 15vh 5vh;
+        margin: 15vh 0 10vh;
+        padding: 5vh 5vh 0;
         font-weight: 700;
 
         h1 {
             font-size: 48px;
             margin-bottom: 3vh;
         }
-        
+
         p {
             font-size: 17px;
             color: #e9204f;
@@ -175,6 +205,11 @@ main {
 
     #services {
 
+        &::after {
+            top: -15vh;
+            height: 30px;
+        }
+
         #serviceTypes {
             display: flex;
             justify-content: space-evenly;
@@ -182,30 +217,75 @@ main {
             gap: 10px;
 
             .serviceType {
-                background-color: #747474;
+                background-color: #191919;
                 width: 30%;
                 height: 15vh;
+
+                h5 {
+                    margin: 6vh 4vh;
+                    font-size: 18px;
+                }
+
+                i {
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    margin: 6vh 5vh;
+                    font-size: 22px;
+                }
+
+                img {
+                    display: none;
+                    position: absolute;
+                    top: 10px;
+                    left: 0;
+                    height: 80%;
+                }
+
+                &:hover {
+                    background-color: #e9204f;
+
+                    h5,
+                    img {
+                        transform: translateX(5%);
+                    }
+
+                    h5,
+                    img,
+                    i {
+                        transition: 0.5s ease-in-out;
+                    }
+
+                    img {
+                        display: block;
+                    }
+
+                    i {
+                        transform: translateX(35%);
+                    }
+                }
+
             }
+        }
+
+        #client {
+            .clientHeader {
+                
+                img {
+                    height: 10vh;
+                }
+            }
+
         }
     }
 
     #works {
-        
+
         a {
             position: absolute;
             top: 3vh;
             right: 3%;
             z-index: 1;
-        }
-
-        &::before {
-            content: "";
-            position: absolute;
-            bottom: 100%;
-            left: 50%;
-            border-right: solid 2px #e9204f;
-            width: 2px;
-            height: 60px;
         }
 
         #worksMain {
@@ -215,7 +295,10 @@ main {
             .worksImageWithText {
                 display: flex;
                 flex-direction: column;
+                position: relative;
+                overflow: hidden;
                 cursor: pointer;
+                margin-left: 3vh;
 
                 .worksTextByHover {
                     display: none;
@@ -230,6 +313,7 @@ main {
                 }
 
                 &:hover {
+
                     .worksTextByHover {
                         display: flex;
                         justify-content: center;
@@ -239,16 +323,87 @@ main {
                         top: 30vh;
                         left: 20vh;
                     }
-                }
 
-                &:hover img {
-                    filter: grayscale(0%);
-                    transform: scale(1.05);
-                    max-width: 100%;
+                    img {
+                        filter: grayscale(0%) opacity(40%);
+                        transform: scale(1.05);
+                        max-width: 100%;
+                    }
                 }
             }
         }
     }
+
+    #about {
+
+        #aboutMain {
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: 1fr;
+            gap: 0px 0px;
+            grid-template-areas:
+                "aboutMainStart . ."
+                "aboutMainLast . ."
+                ". . .";
+
+            #aboutMainStart {
+                grid-area: aboutMainStart;
+
+                display: grid;
+                grid-template-columns: 2fr 1fr;
+                gap: 20px 0;
+                grid-auto-flow: column;
+                grid-template-areas:
+                    "aboutGrid1 aboutGrid2 ."
+                    "aboutGrid1 aboutGrid3 ."
+                    ". . .";
+
+                .aboutGrid1 {
+                    grid-area: aboutGrid1;
+                }
+
+                .aboutGrid2 {
+                    grid-area: aboutGrid2;
+                }
+
+                .aboutGrid3 {
+                    grid-area: aboutGrid3;
+                }
+
+                .aboutImageWithText {
+                    margin-left: 2.5vh;
+                    margin-right: 3vh;
+
+                    img {
+                        object-fit: cover;
+                        width: 100%;
+                        height: 100%;
+                        }
+                    }
+                }
+            }
+
+            #aboutMainLast {
+                grid-area: aboutMainLast;
+
+                display: flex;
+                justify-content: space-around;
+                gap: 15vh;
+
+                .aboutJustText {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 5vh;
+                    
+                    p {
+                        width: 50vh;
+                    }
+                }
+
+            }
+        }
+    }
+
 }
 
 footer {
@@ -258,7 +413,7 @@ footer {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        
+
         #footerStartBackground {
             background-color: #1b1b1b;
             position: absolute;
@@ -303,8 +458,9 @@ footer {
             font-size: 16px;
             font-weight: 600;
             cursor: pointer;
-            overflow: hidden; /* Added to hide overflowing content */
-          
+            overflow: hidden;
+            /* Added to hide overflowing content */
+
             &::after {
                 content: "";
                 position: absolute;
@@ -316,12 +472,12 @@ footer {
                 transition: 0.5s ease-in-out;
                 z-index: -1;
             }
-          
+
             &:hover::after {
                 width: 100%;
             }
         }
-    
+
     }
 
     #footerMain {
@@ -333,7 +489,7 @@ footer {
 
         .contactDetail {
             line-height: 35px;
-            
+
             h3 {
                 font-size: 20px;
                 font-weight: 800;
