@@ -9,19 +9,22 @@
 </head>
 <body>
     <header>
-        <h1>Gentium.</h1>
-        <nav>
+        <a id="websiteName" href="index.html">Gentium.</a>
+        <nav class="nav-menu">
             <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Services</a></li>
-                <li><a href="#">Works</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Client</a></li>
-                <li><a href="#">Blog</a></li>
-                <li><a href="#">Contact</a></li>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#works">Works</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#client">Client</a></li>
+                <li><a href="#blog">Blog</a></li>
+                <li><a href="#contact">Contact</a></li>
                 <li><a href="#"><img src="./src/images/header/search.svg" alt="Search"></a></li>
             </ul>
         </nav>
+        <div class="burger-menu">
+            <i class="fa-solid fa-bars"></i>
+        </div>
     </header>
     <main>
         <div id="upBanner">
@@ -59,7 +62,7 @@
             <div id="serviceTypes">
                 <div class="serviceType">
                     <img src="./src/images/services/strategy-svgrepo-com.svg" alt="Digital strategy">
-                    <h5>Digital strategy</h5>
+                    <h5>Digital Strategy</h5>
                     <i class="fa-solid fa-arrow-right"></i>
                 </div>
                 <div class="serviceType">
@@ -235,37 +238,41 @@
         </section>
     </main>
     <footer>
-        <section id="footerStart">
-            <div id="footerStartBackground"></div>
-            <div id="socialLinks">
-                <ul>
-                    <li><i class="fab fa-facebook-f"></i></li>
-                    <li><i class="fab fa-twitter"></i></li>
-                    <li><i class="fab fa-instagram"></i></li>
-                    <li><i class="fab fa-github"></i></li>
-                </ul>
+        <section id="contact">
+            <div id="footerStart">
+                <div id="footerStartBackground"></div>
+                <div id="socialLinks">
+                    <ul>
+                        <li><i class="fab fa-facebook-f"></i></li>
+                        <li><i class="fab fa-twitter"></i></li>
+                        <li><i class="fab fa-instagram"></i></li>
+                        <li><i class="fab fa-github"></i></li>
+                    </ul>
+                </div>
+                <h1>Let's Talk?</h1>
+                <button type="button">Make an enquiry!</button>
             </div>
-            <h1>Let's Talk?</h1>
-            <button type="button">Make an enquiry!</button>
-        </section>
-        <section id="footerMain">
-            <div class="contactDetail">
-                <h3>Berlin.</h3>
-                <p>+21 30 310 0010</p>
+            <div id="footerMain">
+                <div class="contactDetail">
+                    <h3>Berlin.</h3>
+                    <p>+21 30 310 0010</p>
+                </div>
+                <div class="contactDetail">
+                    <h3>Melbourne.</h3>
+                    <p>+21 201 161 0011</p>
+                </div>
             </div>
-            <div class="contactDetail">
-                <h3>Melbourne.</h3>
-                <p>+21 201 161 0011</p>
-            </div>
-        </section>
-        <section id="footerLast">
-            <p>© 2024 Kanan N. All rights reserved. Powered by <a href="https://gentium.pixerex.com/home-3/">Gentium Template</a></p>
-            <div id="footerLastLinks">
-                <a href="#">Terms of use</a>
-                <a href="#">Privacy Policy</a>
-                <a href="#">Cookie Policy</a>
+            <div id="footerLast">
+                <p>© 2024 Kanan N. All rights reserved. Powered by <a href="https://gentium.pixerex.com/home-3/">Gentium
+                        Template</a></p>
+                <div id="footerLastLinks">
+                    <a href="#">Terms of use</a>
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Cookie Policy</a>
+                </div>
             </div>
         </section>
     </footer>
+    <script src="./src/js/script.js"></script>
 </body>
 </html>
